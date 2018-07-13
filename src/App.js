@@ -3,13 +3,24 @@ import logo from './logo.svg';
 import './App.css';
 
 import CForm from './Components/CForm/CForm';
+import Contact from './Components/Contact/Contact';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      fname: 'First',
+      lName: 'Last',
+      Usr: 'Username'
+    }
+  }
   render() {
     return (
       <div>
       <h1>Contact Manager UI</h1>
-        <CForm />
+      <CForm />
+      <br />
+      <Contact />
       </div>
     );
   }
