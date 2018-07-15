@@ -8,11 +8,17 @@ import Contact from './Components/Contact/Contact';
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      fname: 'First',
+    this.state = [
+      {
+      id: null,
+      fName: 'First',
       lName: 'Last',
       Usr: 'Username'
     }
+  ]
+  }
+  fNameReturn() {
+
   }
   render() {
     return (
