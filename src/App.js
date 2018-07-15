@@ -4,18 +4,22 @@ import './App.css';
 
 import CForm from './Components/CForm/CForm';
 import Contact from './Components/Contact/Contact';
+import TRows from './Components/TRows/TRows';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = [
+  constructor(props) {
+    super(props);
+    this.state = 
       {
-      id: null,
-      fName: 'First',
-      lName: 'Last',
-      Usr: 'Username'
+        users: [
+      {id: 1,
+      fName: 'Tom',
+      lName: 'Ford',
+      Usr: 'TFord23'
+      }
+    ]
+      
     }
-  ]
   }
   fNameReturn() {
 
@@ -26,7 +30,13 @@ class App extends Component {
       <h1>Contact Manager UI</h1>
       <CForm />
       <br />
-      <Contact />
+      {this.state.users.map((users) => {
+        return <TRows
+        id={users.id}
+        fName={users.fName}
+        lName={users.lName} 
+        Usr={users.Usr}/>
+      })}
       </div>
     );
   }
